@@ -5,13 +5,13 @@ services:
     build: .
     command: npm run make:deb:64
     volumes:
-      - ./dist:/dist
+      - ./dist:/app/dist
 
   fedora-64:
     build: .
     command: npm run make:rpm:64
     volumes:
-      - ./dist:/dist
+      - ./dist:/app/dist
 
 volumes:
   checkout:

@@ -56,6 +56,7 @@ const defaultPackageConf = {
     },
   ],
   arch: 'all',
+  tmpdir: '/tmp',
   asar: true,
   buildVersion: packageJSON.version,
   dir: __dirname,

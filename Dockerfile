@@ -26,8 +26,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   xvfb \
 && rm -rf /var/lib/apt/lists/*
 
+RUN \
+  cd /usr/local/lib/ \
+  && mv ./node_modules ./node_modules.tmp \
+  && mv ./node_modules.tmp ./node_modules \
+  && npm install -g npm@3
+
 WORKDIR /app
 COPY package.json /app
+
 RUN npm install \
   && npm cache clean \
   && rm -rf /tmp/npm*
